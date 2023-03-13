@@ -72,7 +72,6 @@ body {
     filter: drop-shadow(0 0 2px var(--icon-hover-color)) drop-shadow(0 0 5px var(--icon-hover-color)) drop-shadow(0 0 15px var(--icon-hover-color));
 }
 
-.navigation:not(.active) span:nth-child(6) button,
 .navigation:not(.active) span:nth-child(6) input {
     display: none;
 }
@@ -93,19 +92,4 @@ body {
 
 #inputColor::-moz-color-swatch {
     border-radius: 50%; 
-}
-
-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-#colorIcon {
-    font-size: 1.68em;
 }

@@ -1,12 +1,19 @@
 let navigation = document.querySelector('.navigation');
 let color = document.querySelector('#inputColor');
 let body = document.querySelector('body');
+let spanColor = document.querySelector('#spanColor');
 
-navigation.onclick = function() {
-    navigation.classList.toggle('active');
+function onClickContainer(event) {
+    if (event.target.id === 'inputColor') {
+        event.target.removeEventListener('click', onClickContainer);
+    } else {
+        navigation.classList.toggle('active');
+    }
 }
 
-function pickColor() {
-    body.style.background = color.value;
-    document.documentElement.style.setProperty('--icon-hover-color', color.value);
-}
+navigation.addEventListener('click', onClickContainer);
+
+color.addEventListener('input', function() {
+  document.body.style.backgroundColor = color.value;
+  document.documentElement.style.setProperty('--icon-hover-color', color.value);
+});
