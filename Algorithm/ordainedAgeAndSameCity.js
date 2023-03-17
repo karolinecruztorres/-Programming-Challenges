@@ -8,18 +8,18 @@ const people = [
 ];
 
 const otherPeople = [
-  { name: "Felipe", age: 28, city: "São Paulo" },
+  { name: "Felipe", age: 15, city: "São Paulo" },
   { name: "Juliana", age: 24, city: "Rio de Janeiro" },
   { name: "Thiago", age: 33, city: "Curitiba" },
   { name: "Amanda", age: 22, city: "Belo Horizonte" },
   { name: "Luciana", age: 31, city: "Fortaleza" },
   { name: "Ricardo", age: 26, city: "Porto Alegre" },
   { name: "Mariana", age: 29, city: "Recife" },
-  { name: "Gustavo", age: 23, city: "Salvador" },
+  { name: "Gustavo", age: 10, city: "Salvador" },
   { name: "Roberta", age: 30, city: "Brasília" },
   { name: "Pedro", age: 27, city: "Campinas" },
   { name: "Márcia", age: 35, city: "São Paulo" },
-  { name: "Fernando", age: 21, city: "Porto Alegre" },
+  { name: "Fernando", age: 24, city: "Porto Alegre" },
   { name: "Ana", age: 32, city: "Belo Horizonte" },
   { name: "Rafael", age: 25, city: "São Paulo" },
   { name: "Carla", age: 26, city: "Recife" },
@@ -37,10 +37,12 @@ const checkCity =(array, city)=>{
     for (let i = 0; i < array.length; i++) {
         if (map[i] === city) {
           sameCity.push(array[i]);
-        }
+        } 
     }
-    
+    sameCity = sameCity.sort(function(a, b) {
+                return a.age - b.age;
+              }); 
     console.log(sameCity);
 }
 
-checkCity(otherPeople, 'Curitiba');
+checkCity(people, "São Paulo");
