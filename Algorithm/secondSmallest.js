@@ -1,13 +1,13 @@
 //Encontre o segundo menor valor numérico de uma array
-function findSecondSmallest(parametro) {
+function findSecondSmallest(parameter) {
     let smallest = Infinity;
     let secondSmallest = Infinity;
-    for (let i = 0; i < parametro.length; i++) {
-      if (parametro[i] < smallest) {
+    for (let i = 0; i < parameter.length; i++) {
+      if (parameter[i] < smallest) {
         secondSmallest = smallest;
-        smallest = parametro[i];
-      } else if (parametro[i] < secondSmallest && parametro[i] !== smallest) {
-        secondSmallest = parametro[i];
+        smallest = parameter[i];
+      } else if (parameter[i] < secondSmallest && parameter[i] !== smallest) {
+        secondSmallest = parameter[i];
       }
     }
     return secondSmallest;
@@ -15,4 +15,3 @@ function findSecondSmallest(parametro) {
   
   const array = [7, 2, 0, 5, 3, 1];
   console.log(findSecondSmallest(array)); 
-  

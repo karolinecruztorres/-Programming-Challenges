@@ -11,10 +11,10 @@ const array = [
 const arrayMap = array.map(obj => obj.a + obj.b + obj.c);
 let highest = 0;
 
-const highestValue =(parametro)=>{
-    for (let i = 0; i < parametro.length; i++) {
-        if (parametro[i] > highest) {
-            highest = parametro[i];
+const highestValue =(parameter)=>{
+    for (let i = 0; i < parameter.length; i++) {
+        if (parameter[i] > highest) {
+            highest = parameter[i];
         }else {
             highest = highest;
         }        
