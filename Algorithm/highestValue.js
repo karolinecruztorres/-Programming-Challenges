@@ -1,5 +1,4 @@
-//Encontre o objeto que tem a maior soma de valores em suas propriedades
-// Sugestão do Chat GPT
+// Find the object with the highest sum of values in its properties.
 // const highest = arrayMap.reduce((a, b) => Math.max(a, b)); 
 
 const array = [
