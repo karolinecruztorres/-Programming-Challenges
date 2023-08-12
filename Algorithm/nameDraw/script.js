@@ -1,39 +1,62 @@
-let names = ['Beth', 'Clemens', 'Fred', 'Angela', 'Carmen'];
+let names = ['Carlos', 'Maria', 'Karoline', 'Funny'];
+let elementsAdded = false;
+let container = document.querySelector('.container');
 
 function addName() {
-  const container = document.querySelector('.container');
+  if (elementsAdded) {
+    return;
+  }
 
   const addMessage = document.createElement('p');
   addMessage.textContent = 'Enter at least two names to be drawn.';
   container.appendChild(addMessage);
 
-  const inputElement = document.createElement('input');
-  inputElement.type = 'text';
-  inputElement.placeholder = 'Type a name';
-  inputElement.classList.add('input-name');
-  container.appendChild(inputElement);
+  const addInput = document.createElement('input');
+  addInput.type = 'text';
+  addInput.placeholder = 'Type a name';
+  addInput.classList.add('input-name');
+  container.appendChild(addInput);
 
   const addButton = document.createElement('button');
   addButton.textContent = 'Add';
-  inputElement.classList.add('add-name');
+  addButton.classList.add('add-name');
+  addButton.onclick = () => {
+    const inputElement = document.querySelector('.input-name'); 
+    const name = inputElement.value;
+    names.push(name);
+    console.log(names);
+  }
   container.appendChild(addButton);
+
+  elementsAdded = true;
 }
 
 function listNames() {
+  // if (elementsAdded) {
+  //   return;
+  // }
+
+  const listMessage = document.createElement('p');
+
   if (names.length >= 1) {
-    document.querySelector('.js-list').innerHTML = `List: ${names}`;
+    listMessage.textContent = `List: ${names}`;
+    //elementsAdded = true;
   } else {
-    document.querySelector('.js-list').innerHTML = 'List is empty, add at least one name to show the list.'; 
+    listMessage.textContent = 'List is empty, add at least one name to show the list.';
+    //elementsAdded = true;
   }
+  container.appendChild(listMessage);
 }
 
 function drawName(names) {
+  const drawMessage = document.createElement('p');
+
   if (names.length < 2) {
-    document.querySelector('.js-draw').innerHTML = 'Add at least two names to drawn.';
+    drawMessage.textContent = 'Add at least two names to drawn.';
   } else {
     const randomIndex = Math.floor(Math.random() * names.length);
-
-    document.querySelector('.js-draw').innerHTML = `The winner was ${names[randomIndex]}, congrats!`
+    drawMessage.textContent = `The winner is ${names[randomIndex]}, congrats!`
+    names.splice(randomIndex, 1);
   }
+  container.appendChild(drawMessage);
 }
-
