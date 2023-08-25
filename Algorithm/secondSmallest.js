@@ -1,4 +1,3 @@
-//Encontre o segundo menor valor numérico de uma array
 function findSecondSmallest(parameter) {
     let smallest = Infinity;
     let secondSmallest = Infinity;

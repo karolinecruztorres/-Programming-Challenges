@@ -1,4 +1,4 @@
-// retorne um array com as pessoas que morem na mesma cidade, ordenado por idade, do mais novo para o mais velho.
+// returns an array of people who live in the same city, sorted by age, from youngest to oldest.
 const people = [
   { name: "João", age: 27, city: "São Paulo" },
   { name: "Maria", age: 31, city: "Rio de Janeiro" },
