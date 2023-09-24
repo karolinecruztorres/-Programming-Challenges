@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(131, 130, 130);
+}
+
+#game{
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.cell{
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  display: flex;
+}
+
+#p1, #p2, #p4, #p5, #p7, #p8 {
+  border-right: 2px black solid;
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6 {
+  border-bottom: 2px black solid;
+}
