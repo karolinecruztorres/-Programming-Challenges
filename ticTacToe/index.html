@@ -7,28 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div id="menu">
-    <div id="whoStarts"></div>
-    <button onclick="">Play Game</button>
-  </div>
-
-  <div id="game">
-    <div id="p1" class="cell" onclick="play(1)"></div>
-    <div id="p2" class="cell" onclick="play(2)"></div>
-    <div id="p3" class="cell" onclick="play(3)"></div>
-    <div id="p4" class="cell" onclick="play(4)"></div>
-    <div id="p5" class="cell" onclick="play(5)"></div>
-    <div id="p6" class="cell" onclick="play(6)"></div>
-    <div id="p7" class="cell" onclick="play(7)"></div>
-    <div id="p8" class="cell" onclick="play(8)"></div>
-    <div id="p9" class="cell" onclick="play(9)"></div>
-  </div>
-
-  <div id="score"></div>
-  <div id="winner"></div>
-
+  <div class="game"></div>
+  
   <script src="script.js"></script>
+
+  <script>
+    tic_tac_toe.init(document.querySelector(".game"));
+    tic_tac_toe.start();
+  </script>
   
 </body>
 </html>
