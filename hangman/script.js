@@ -1,18 +1,22 @@
-function guessLetter(){
 let word = "apricot";
-let word2 = "a";
 const wordArray = word.split("");
 let result = [];
+let keys = document.getElementsByClassName(".keys");
 
-  for (i = 0; i < wordArray.length; i++){
-    if (word2 !== wordArray[i]){
-      result.push("_");
-    } else {
-      result.push(word2);
-    }
+function guessLetter(event){
+  if (event.key.match(/[a-zA-Z]/)) {
+    let letter = event.key; 
+
+    for (i = 0; i < wordArray.length; i++){
+      if (letter !== wordArray[i]){
+        result.push("_");
+      } else {
+        result.push(letter);
+      }
+    }  
   }
 
   console.log(result);
- }
+}
 
- guessLetter();
+document.addEventListener("keydown", guessLetter);
