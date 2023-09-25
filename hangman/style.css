@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #6767AB;
+}
+
+.container {
+  width: 850px;
+  background-color: #ffffff;
+  display: flex;
+  gap: 70px;
+  align-items: flex-end;
+  padding: 60px 40px;
+  border-radius: 10px;
+}
+
+.hangman-box img {
+  max-width: 270px;
+}
+
+.hangman-box h1 {
+  font-size: 1.45rem;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.word-display {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-display .letter {
+  width: 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #000;
+}
+
+.word-display .letter.guessed {
+  border-color: transparent;
+  margin: -40px 0 35px;
+}
+
+.game-box h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.game-box h2 b {  /*Don't know what difference this is making, cuz' don't seems to alternate the font weight*/
+  font-weight: 600;
+}
+
+.game-box .guesses-text b {
+  color: #ff0000;
+}
+
+.game-box .keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.keyboard button {
+  width: calc(100% / 9 - 5px);
+  border-radius: 4px;
+  border: none;
+  background-color: #6767AB;
+  padding: 7px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
