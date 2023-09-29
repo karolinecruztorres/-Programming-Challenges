@@ -13,9 +13,8 @@ function guessLetter(event){
       } else {
         result.push(letter);
       }
-    }  
-  }
-
+      }  
+    }
   console.log(result);
 }
 
