@@ -1,4 +1,3 @@
-// returns an array of people who live in the same city, sorted by age, from youngest to oldest.
 const people = [
   { name: "João", age: 27, city: "São Paulo" },
   { name: "Maria", age: 31, city: "Rio de Janeiro" },
@@ -32,17 +31,18 @@ const otherPeople = [
   
 let sameCity = [];
 
-const checkCity =(array, city)=>{
-  let map = array.map(obj => obj.city);
-    for (let i = 0; i < array.length; i++) {
-        if (map[i] === city) {
-          sameCity.push(array[i]);
+const checkCity = (array, city) => {           
+  let map = array.map(obj => obj.city);        
+    for (let i = 0; i < array.length; i++) {   
+        if (map[i] === city) {                
+          sameCity.push(array[i]);            
         } 
     }
-    sameCity = sameCity.sort(function(a, b) {
-                return a.age - b.age;
-              }); 
-    console.log(sameCity);
+    
+    sameCity = sameCity.sort(function(a, b) { 
+                              return a.age - b.age;
+                            }); 
+    console.log(sameCity);                    
 }
 
-checkCity(people, "São Paulo");
+checkCity(otherPeople, "Salvador");
