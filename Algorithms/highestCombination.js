@@ -9,8 +9,8 @@ A solução deve ter complexidade de tempo O(n log n), ou seja, deve ser uma sol
 //Primeiro precisa ordenar o array pelo primeiro número de cara valor
 // Depois concatenar usando map
 
-const numbers = [50, 2, 1, 9];
+let numbers = [30, 7, 5, 9];
+numbers.sort((a,b) => b - a);
 
-let highestCombination =(parameter)=> {
-    
-}
+console.log(numbers);
+
