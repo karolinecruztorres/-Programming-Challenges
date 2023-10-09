@@ -1,19 +1,13 @@
-let library = {
+const library = {
   name: "Biblioteca Nacional de Brasilia",
   address: "Setor Cultural da República, Brasília",
   books: [],
-  loanHistory:[
-    {
-      title: " ",
-      loanDate: " ",
-      returnDate: " "
-    }
-  ]
+  loanHistory:[]
 };
 
 function addBook(type, title, author, publishYear, status) { 
   if (type === "book") {
-    let bookOrMagazine = { 
+    const bookOrMagazine = { 
       type: type,
       title: title,
       author: author,
@@ -35,10 +29,15 @@ function lendBook(title) {
     if (library.books[i].title === title) {
       if (library.books[i].status === "avalible") {
         library.books[i].status = "borrowed";
-        console.log(library.books[i]);
+
+        library.loanHistory.push({
+          title: title,
+          loanDate: new Date().toLocaleDateString(),
+          returnDate: null
+        });
+
         return "Book found and status changed to 'borrowed.'";
       } else {
-        console.log(library.books[i]);
         return "Book is already on loan.";
       }      
     }
@@ -50,20 +49,35 @@ function returnBook(title) {
     if (library.books[i].title === title) {
       if (library.books[i].status === "borrowed") {
         library.books[i].status = "avalible";
-        console.log(library.books[i]);
+        bookHistory(title);
+
         return "Book found and status changed to 'avalible.'";
       } else {
-        console.log(library.books[i]);
         return "Book is already available.";
       }      
     }
   }
 };
 
+function bookHistory(title) {
+  for (let i = 0; i < library.loanHistory.length; i++) {
+    if (library.loanHistory[i].title === title && library.loanHistory[i].returnDate === null) {
+      const currentDate = new Date();
+      const futureDate = new Date(currentDate.getTime() + 10 * 24 * 60 * 60 * 1000);
+      const formattedDate = futureDate.toLocaleDateString();
+
+      library.loanHistory[i].returnDate = formattedDate;    
+    }
+  }
+  console.log(library.loanHistory);
+};
+
 function listBooks() {
-  console.log(library.books);
-}
+  console.log(library);
+};
 
 console.log(lendBook("Dom Casmurro"));
+console.log(lendBook("Quarto de Despejo"));
+console.log(lendBook("The Demon-Haunted World"));
 console.log(returnBook("Dom Casmurro"));
 listBooks();
