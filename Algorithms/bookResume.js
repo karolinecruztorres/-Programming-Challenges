@@ -19,9 +19,9 @@ function bookResume(parameter) {
     soma += parameter.reviewer[i].rate; 
   }
   
-  const media = Math.round(soma / parameter.reviewer.length);
+  const average = Math.round(soma / parameter.reviewer.length);
   
-  console.log(`The book "${parameter.title}" was written by ${parameter.author} and publish in ${parameter.publish}. It has ${parameter.pages} pages and recived evaluation from reviewers:${resume}. The average reviewer score is ${media}.`);  
+  console.log(`The book "${parameter.title}" was written by ${parameter.author} and publish in ${parameter.publish}. It has ${parameter.pages} pages and recived evaluation from reviewers:${resume}. The average reviewer score is ${average}.`);  
 }
 
 bookResume(book); 

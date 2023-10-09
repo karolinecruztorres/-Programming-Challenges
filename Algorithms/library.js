@@ -18,16 +18,16 @@ function addBook(type, title, author, publishYear, status) {
   }
 };
 
-addBook("book", "Het Achterhuis", "Anne Frank", 1947, "avalible");
-addBook("book", "Dom Casmurro", "Machado de Assis", 1899, "avalible");
-addBook("book", "The Demon-Haunted World", "Ann Druyan and Carl Sagan", 1995, "avalible");
-addBook("book", "Quarto de Despejo", "Carolina Maria de Jesus", 1960, "avalible");
-addBook("magazine", "Raça", "Aroldo Macedo", 2023, "avalible");
+addBook("book", "Het Achterhuis", "Anne Frank", 1947, "available");
+addBook("book", "Dom Casmurro", "Machado de Assis", 1899, "available");
+addBook("book", "The Demon-Haunted World", "Ann Druyan and Carl Sagan", 1995, "available");
+addBook("book", "Quarto de Despejo", "Carolina Maria de Jesus", 1960, "available");
+addBook("magazine", "Raça", "Aroldo Macedo", 2023, "available");
 
 function lendBook(title) {
   for (let i = 0; i < library.books.length; i++) {
     if (library.books[i].title === title) {
-      if (library.books[i].status === "avalible") {
+      if (library.books[i].status === "available") {
         library.books[i].status = "borrowed";
 
         library.loanHistory.push({
@@ -36,7 +36,7 @@ function lendBook(title) {
           returnDate: null
         });
 
-        return "Book found and status changed to 'borrowed.'";
+        return "Book found and status changed to 'borrowed'.";
       } else {
         return "Book is already on loan.";
       }      
@@ -48,10 +48,10 @@ function returnBook(title) {
   for (let i = 0; i < library.books.length; i++) {
     if (library.books[i].title === title) {
       if (library.books[i].status === "borrowed") {
-        library.books[i].status = "avalible";
+        library.books[i].status = "available";
         bookHistory(title);
 
-        return "Book found and status changed to 'avalible.'";
+        return "Book found and status changed to 'available'.";
       } else {
         return "Book is already available.";
       }      
