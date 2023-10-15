@@ -1,20 +1,20 @@
 let productsCatalog = {
   "tshirt": {
-    name: "T-Shirt",
+    productName: "T-Shirt",
     price: 19.99,
     description: "A simple cotton T-shirt.",
     stock: 100
   },
 
   "coffeeMug": {
-    name: "Coffee Mug",
+    productName: "Coffee Mug",
     price: 9.99,
     description: "A ceramic coffee mug for your hot beverages.",
     stock: 100
   },
 
   "smartphoneCase": {
-    name: "SuperCase",
+    productName: "SuperCase",
     price: 24.99,
     description: "A smartphone case that you can customize with different colors and materials.",
     options: {
@@ -32,7 +32,7 @@ let productsCatalog = {
   },
 
   "notebook": {
-    name: "mcBook",
+    productName: "mcBook",
     price: 999.99,
     description: "A customizable notebook with various options for processor, RAM, and storage.",
     options: {
@@ -55,17 +55,15 @@ let productsCatalog = {
   }
 };
 
-let allProducts = Object.keys(productsCatalog);
-
+const allProducts = Object.keys(productsCatalog);
 
 function stock(stockAction) {
-
   if (stockAction === "display") {
     for (let i = 0; i < allProducts.length; i++) {
       if (productsCatalog[allProducts[i]].options) {
         const allOptions = Object.keys(productsCatalog[allProducts[i]].options);
         console.log(`
-.The product '${productsCatalog[allProducts[i]].name}' has in stock:`);
+.The product '${productsCatalog[allProducts[i]].productName}' has in stock:`);
         
         for (let j = 0; j < allOptions.length; j++) {
           const optionName = allOptions[j];
@@ -80,7 +78,7 @@ function stock(stockAction) {
         }
       } else {
         console.log(`
-.The product '${productsCatalog[allProducts[i]].name}' has in stock: ${productsCatalog[allProducts[i]].stock}`);    
+.The product '${productsCatalog[allProducts[i]].productName}' has in stock: ${productsCatalog[allProducts[i]].stock}`);    
       }
     }
   } else if (stockAction === "add") {
@@ -89,12 +87,8 @@ function stock(stockAction) {
         if (productsCatalog[allProducts].options) {
           const allOptions = Object.keys(productsCatalog[allProducts].options);
           const allDetails = Object.keys(productsCatalog[allProducts].options[allOptions[option]]);
-
-          allDetails.forEach(allDetail => {
-            console.log(allDetail);
-          });
           
-          
+          console.log(allDetails);
         } else {
           productsCatalog[allProducts].stock += quantity;
           console.log(productsCatalog[allProducts]);
@@ -105,23 +99,34 @@ function stock(stockAction) {
   }
 };
 
-stock("add");
+//stock("display");
 
 
+function addToCart(allProducts, cartQuantity) {
+  let shoppingCart = {};
+  if (productsCatalog[allProducts].options) {
+    shoppingCart = {productName: productsCatalog[allProducts].productName, quantity: cartQuantity, unitPrice: productsCatalog[allProducts].price, totalItemPrice: parseFloat((productsCatalog[allProducts].price *= cartQuantity).toFixed(2))};
+    
 
-function addToCart(allProducts, name, quantity) {
-  let cart = {};
-  if (name === productsCatalog[allProducts]) {
-
+    // productName: 'mcBook',
+    // processor: "Intel i7" (and -1 unit of stock),
+    // ram: "32GB" (and -1 unit of stock),
+    // storage: "512GB SSD" (and -1 unit of stock),
+    // quantity: 3,
+    // unitPrice: 999.99,
+    // totalItemPrice: 2999.97
+    
+    console.log(shoppingCart);
+  } else {
+    shoppingCart = {productName: productsCatalog[allProducts].productName, quantity: cartQuantity, unitPrice: productsCatalog[allProducts].price, totalItemPrice: parseFloat((productsCatalog[allProducts].price *= cartQuantity).toFixed(2))};
+    console.log(shoppingCart);
   }
-
-  //console.log(cart);
 };
 
-//addToCart();
+addToCart("notebook", 3);
 
 function displayCart() {
-  
+  //  totalCartPrice 
 };
 
 function purchase() {
