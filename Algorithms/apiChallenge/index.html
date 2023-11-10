@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="characterForm">
+    <div class="form-group">
+      <label for="chooseByCharacter">Character</label>
+      <input id="chooseByCharacter" type="radio" name="choiceRadio" value="character">
+
+      <label for="chooseByActor">Actor</label>
+      <input id="chooseByActor" type="radio" name="choiceRadio" value="actor">
+    </div>
+      
+    <div class="form-group">
+      <label for="dropdown">All options</label>
+      <select name="chooseCharacter" id="dropdown">
+        <option value="">Select the one you search for</option>
+        <option value="Harry Potter">Harry Potter</option>
+        <option value="Hermione Granger">Hermione Granger</option>
+        <option value="Albus Dumbledore">Albus Dumbledore</option>
+        <option value="Dobby">Dobby</option>
+      </select>
+    </div>
+
+    <input id="search" type="submit" value="Search">
+  </form>
+
+  <div>
+    <img id="characterImage" src="" alt="">
+    <p id="characterName"></p>
+    <p id="characterAlternativeName"></p>
+    <p id="characterActor"></p>
+    <p id="characterHouse"></p>
+    <p id="characterSpecies"></p>
+    <p id="characterDateOfBirth"></p>
+    <p id="characterPatronus"></p>
+    <p id="characterAncestry"></p>
+    <p id="characterIsWizard"></p>
+    <p id="characterWand"></p>   
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
