@@ -1,22 +1,109 @@
 body {
-  background-color: rgb(252, 249, 246);
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(0, 0, 0);
+  background: url(images/papiro_bg.jpg), no-repeat;
+  object-fit: contain;
+  font-family: 'Bigelow Rules', serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 42px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0 0;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+#logo img {
+  height: 70px;
+  margin: 0;
 }
 
 #characterForm {
-  margin: 40vh auto;
+  height: 50vh;
   width: 500px;
 }
 
-.form-group, #search {
-  display: block;
-  margin: 30px 0;
-  font-size: 20px;
+.radioContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.radioGroup img {
+  height: 40px;
+  width: 40px;
+  margin: 0 auto;
+  padding: 5px 0 0 0;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+label[for="chooseByCharacter"], label[for="chooseByActor"] {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  cursor: pointer;
+  color: #666;
+}
+
+input[type="radio"]:checked+label {
+  color: goldenrod;
+  font-weight: bold;
+}
+
+label[for="dropdown"] {
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.selectGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #dropdown {
-  width: 500px;
+  width: 380px;
   height: 40px;
-  font-size: 16px;
+  background-color: rgba(183, 156, 109, 0.26);
+  border: none;
+  font-family: 'Bigelow Rules', serif;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+#search {
+  border: none;
+  background-color: rgba(183, 156, 109, 0.5);
+  margin-top: 15px;
+  width: 500px;
+  height: 30px;
+  font-family: 'Bigelow Rules', serif;
+  font-size: 27px;
+  cursor: pointer;
 }

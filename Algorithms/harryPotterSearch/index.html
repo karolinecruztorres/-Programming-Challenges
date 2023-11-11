@@ -4,27 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harry Potter Search</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <form id="characterForm">
-    <div class="form-group">
-      <label for="chooseByCharacter">Character</label>
-      <input id="chooseByCharacter" type="radio" name="choiceRadio" value="character">
+    <div id="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/800px-Harry_Potter_wordmark.svg.png" alt="Harry Potter's logo">
+    </div>
+    
+    <h1>How do you want to search by?</h1>
 
-      <label for="chooseByActor">Actor</label>
-      <input id="chooseByActor" type="radio" name="choiceRadio" value="actor">
+    <div class="radioContainer">
+      <div class="radioGroup">
+        <input type="radio" name="imagem" id="chooseByCharacter" value="name"/>
+        <label for="chooseByCharacter" onclick="selectList('name')">Character<img id="charRadio" src="images/goden_icon.png" alt=""></label>
+      </div>
+
+      <div class="radioGroup">
+        <input type="radio" name="imagem" id="chooseByActor" value="actor"/>
+        <label for="chooseByActor" onclick="selectList('actor')">Actor<img id="actorRadio" src="images/goden_icon.png" alt=""></label>
+      </div>
+
     </div>
       
-    <div class="form-group">
-      <label for="dropdown">All options</label>
-      <select name="chooseCharacter" id="dropdown">
-        <option value="">Select the one you search for</option>
-        <option value="Harry Potter">Harry Potter</option>
-        <option value="Hermione Granger">Hermione Granger</option>
-        <option value="Albus Dumbledore">Albus Dumbledore</option>
-        <option value="Dobby">Dobby</option>
-      </select>
+    <div class="selectGroup">
+      <label for="dropdown">All options:</label>
+      <select name="chooseCharacter" id="dropdown"></select>
     </div>
 
     <input id="search" type="submit" value="Search">
