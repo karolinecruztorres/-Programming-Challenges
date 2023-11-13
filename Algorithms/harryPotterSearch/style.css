@@ -1,6 +1,6 @@
 body {
-  background: url(images/papiro_bg.jpg), no-repeat;
-  object-fit: contain;
+  background: url(images/papiro_bg_gg.jpg) no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Bigelow Rules', serif;
   display: flex;
   flex-direction: row;
@@ -10,7 +10,39 @@ body {
   margin: 0;
 }
 
-h1 {
+#bodyError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: auto;
+}
+
+#bodyError h1 {
+  display: block;
+  font-size: 38px;
+  margin: 0;
+}
+
+#bodyError button {
+  display: block;
+  border: none;
+  background-color: rgba(183, 156, 109, 0.5);
+  margin-top: 20px;
+  width: 481px;
+  height: 36px;
+  font-family: 'Bigelow Rules', serif;
+  font-size: 30px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+#bodyError button:hover {
+  opacity: 0.85;
+}
+
+#title {
   font-size: 42px;
   display: flex;
   justify-content: center;
@@ -67,7 +99,12 @@ label[for="chooseByCharacter"], label[for="chooseByActor"] {
   height: 100px;
   margin: auto;
   cursor: pointer;
-  color: #666;
+  color: #303c42;
+  transition: opacity 0.15s;
+}
+
+label[for="chooseByCharacter"]:hover, label[for="chooseByActor"]:hover {
+  opacity: 0.8; /*arrumar hover para que quando selecionado ele nao altere a opacidade*/
 }
 
 input[type="radio"]:checked+label {
@@ -95,6 +132,11 @@ label[for="dropdown"] {
   font-family: 'Bigelow Rules', serif;
   font-size: 27px;
   cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#dropdown:hover {
+  opacity: 0.85;
 }
 
 #search {
@@ -102,8 +144,26 @@ label[for="dropdown"] {
   background-color: rgba(183, 156, 109, 0.5);
   margin-top: 15px;
   width: 500px;
-  height: 30px;
+  height: 34px;
   font-family: 'Bigelow Rules', serif;
-  font-size: 27px;
+  font-size: 28px;
   cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+#search:hover {
+  opacity: 0.85;
+}
+
+#characterData {
+  display: none;
+}
+
+.data {
+  font-size: 30px;;
+  margin: 0;
+}
+
+#dataImg {
+  height: 250px;
 }
