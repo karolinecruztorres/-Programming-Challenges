@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dice roller</title>
+  <title>Dice Roller</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Dice Roller</h1>
-
-  <form>
-    <label for="quantity">
-      Number of dice:
-      <input type="number" name="dice-quantity" id="quantity" placeholder="?">
-    </label>
+  <div class="container">
+    <h1>Dice Roller</h1>
   
-    <input type="button" value="Roll Dice" id="submit-btn" onclick="rollDice()">
-  </form>
+    <form>
+      <label for="quantity">
+        How many dices?
+        <input type="number" name="dice-quantity" id="quantity" placeholder="1" min="1" max="12">
+      </label>
+    
+      <input type="button" value="Roll Dice" id="submit-btn" onclick="rollDice()">
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>

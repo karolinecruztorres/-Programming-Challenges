@@ -1,6 +1,12 @@
 function rollDice() {
+  const container = document.querySelector(".container");
   const quantityInput = document.getElementById("quantity"); 
   const quantity = quantityInput.value; 
+
+  const existingDiv = document.getElementById("dices");
+  if (existingDiv) {
+    existingDiv.remove();
+  }
   
   const div = document.createElement("div");
   div.id = "dices";
@@ -9,26 +15,27 @@ function rollDice() {
   p.textContent = "Dice: ";
   div.appendChild(p);
   
-  if (quantity <= 6) {
+  if (quantity <= 12) {
     for (let i = 1; i <= quantity; i++) {
+      const randomNumber = Math.ceil(Math.random() * 6);
       const img = document.createElement("img");
-      img.src = `images/dice${i}.png`; 
-      div.appendChild(img);
-    }
-    
-    for (let i = 1; i <= quantity; i++) {
+  
+      if (i <= quantity) {
+        img.src = `images/dice${randomNumber}.png`; 
+        img.alt = `Side ${randomNumber} of the dice`; 
+        div.appendChild(img);
+      }
+      
       if (i < quantity) {
-        p.textContent += `${i},`; 
+        p.textContent += `${randomNumber}, `; 
       } else {
-        p.textContent += `${i}`; 
+        p.textContent += `${randomNumber}`; 
       }
     }
-    
   } else {
-    p.innerHTML = `<span> A dice only has 6 sides, choose from 1 to 6</span>`; 
+    p.innerHTML = `<span>You can roll up to 12 dice at a time.</span>`; 
   }
   
-  document.body.appendChild(div);
-
+  container.appendChild(div);
   quantityInput.value = "";
 }

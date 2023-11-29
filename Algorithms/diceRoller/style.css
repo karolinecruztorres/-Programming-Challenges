@@ -1,6 +1,7 @@
 * {
   font-family: Arial, sans-serif;
   font-weight: 600;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -8,36 +9,54 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100vh;
   height: 100vh;
-  margin: 80px auto 0 auto;
+  margin: 0 auto;
 }
 
-h1, form, #dices {
+.container {
   width: 400px;
   text-align: center;
+  border: 2px solid #616161;
+  border-radius: 6px;
+  padding: 40px 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 form {
-  margin: 30px 0;
+  margin: 0;
+}
+
+label[for="quantity"], #quantity {
+  cursor: pointer;
 }
 
 #quantity {
   width: 70px;
   text-align: center;
-  border: 1px solid #e48f3f;
+  border: 1px solid #8763c9;
   border-radius: 3px;
   padding: 3px;
-  cursor: pointer;
+  margin-left: 5px;
 }
 
 #submit-btn {
   border: none;
   border-radius: 5px;
   color: #fff;
-  background-color: #e48f3f;
-  padding: 4px;
+  background-color: #8763c9;
+  padding: 4px 6px;
   cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+#submit-btn:hover {
+  opacity: 0.85;
 }
 
 #dices {
@@ -45,14 +64,15 @@ form {
 }
 
 img {
-  height: 85px;
-  margin-top: 10px;
+  height: 101px;
 }
 
 p {
   text-align: center;
+  margin: 50px 0 20px 0;
 }
 
 span {
+  margin-top: 15px;
   color: rgb(197, 12, 12);
 }
