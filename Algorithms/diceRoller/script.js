@@ -17,7 +17,7 @@ function rollDice() {
   
   if (quantity <= 12) {
     for (let i = 1; i <= quantity; i++) {
-      const randomNumber = Math.ceil(Math.random() * 6);
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
       const img = document.createElement("img");
   
       if (i <= quantity) {
